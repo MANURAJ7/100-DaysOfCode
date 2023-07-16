@@ -24,4 +24,5 @@ void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
         sorted.push_back(nums1[i1++]);
     }
     nums1 = sorted;
+    // end
 }
