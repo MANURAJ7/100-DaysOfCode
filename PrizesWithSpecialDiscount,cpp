@@ -1,0 +1,23 @@
+vector<int> finalPrices(vector<int> &prices)
+{
+    stack<int> s;
+    vector<int> res(prices.size());
+    for (int i = prices.size() - 1; i >= 0; i--)
+    {
+        while (!s.empty() && prices[i] < s.top())
+        {
+            s.pop();
+        }
+        if (s.empty())
+        {
+            res[i] = prices[i];
+        }
+        else
+        {
+            res[i] = prices[i] - s.top();
+        }
+
+        s.push(prices[i]);
+    }
+    return res;
+}
